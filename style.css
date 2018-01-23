@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     /*!*align-items: flex-start;*!效果等同*/
+    transition: transform 0.5s;
 }
 
 .view {
