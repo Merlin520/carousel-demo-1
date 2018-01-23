@@ -1,0 +1,14 @@
+.image > img {
+    width: 400px;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    /*!*align-items: flex-start;*!效果等同*/
+}
+
+.view {
+    width: 400px;
+    overflow: hidden;
+}
