@@ -18,12 +18,12 @@
 var allButtons = $('#buttons > span');
 
 
-for(let i=0;i<allButtons.length;i++){
-    $(allButtons[i]).on('click',function (x) {
-        var index = $(x.currentTarget).index();//当前元素在所有元素中的顺序（从0开始）
+for (let i = 0; i < allButtons.length; i++) {
+    $(allButtons[i]).on('click', function(x) {
+        var index = $(x.currentTarget).index(); //当前元素在所有元素中的顺序（从0开始）
         var n = index * -400;
         $('#image').css({
-            transform:'translate(' + n + 'px)'
+            transform: 'translate(' + n + 'px)'
         })
     })
 }
@@ -37,24 +37,11 @@ for(let i=0;i<allButtons.length;i++){
 //         }
 //     }
 
-//自动播放
-// var n = 0;
-// var size = allButtons.length
-// allButtons.eq(n%size).trigger('click');
-// setInterval(function () {
-//     n=n+1;
-//     allButtons.eq(n%size).trigger('click')
-// },1000);
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 自动播放
+var n = 0;
+var size = allButtons.length
+allButtons.eq(n % size).trigger('click');
+setInterval(function() {
+    n = n + 1;
+    allButtons.eq(n % size).trigger('click')
+}, 1000);
