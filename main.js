@@ -20,20 +20,32 @@ var allButtons = $('#buttons > span');
 
 for(let i=0;i<allButtons.length;i++){
     $(allButtons[i]).on('click',function (x) {
-
-        var index = $(x.currentTarget).index();
-        var n = index * -300;
-
+        var index = $(x.currentTarget).index();//当前元素在所有元素中的顺序（从0开始）
+        var n = index * -400;
         $('#image').css({
             transform:'translate(' + n + 'px)'
         })
     })
 }
+//当前元素在所有元素中的顺序（从0开始）--DOM写法  当前元素为s
+// var n ;
+// var children = s.parentNode.children;
+//     for(let i = 0;i<children.length;i++){
+//         if(children[i] ===s ){
+//             n = i;
+//             break;
+//         }
+//     }
 
+//自动播放
+var n = 0;
+var size = allButtons.length
+allButtons.eq(n%size).trigger('click');
 
-
-
-
+setInterval(function () {
+    n=n+1;
+    allButtons.eq(n%size).trigger('click')
+},1000);
 
 
 
