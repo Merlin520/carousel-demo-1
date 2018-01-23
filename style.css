@@ -13,3 +13,7 @@
     width: 400px;
     overflow: hidden;
 }
+
+.buttons > span {
+    border: 1px solid black;
+}
