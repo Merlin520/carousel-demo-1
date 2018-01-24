@@ -21,10 +21,14 @@ var allButtons = $('#buttons > span');
 for (let i = 0; i < allButtons.length; i++) {
     $(allButtons[i]).on('click', function(x) {
         var index = $(x.currentTarget).index(); //当前元素在所有元素中的顺序（从0开始）
-        var n = index * -400;
+        var p = index * -400;
         $('#image').css({
-            transform: 'translate(' + n + 'px)'
+            transform: 'translate(' + p + 'px)'
         })
+        n = index;
+        allButtons.eq(n)
+            .addClass('red')
+            .siblings('.red').removeClass('red')
     })
 }
 //当前元素在所有元素中的顺序（从0开始）--DOM写法  当前元素为s
@@ -63,7 +67,7 @@ $('.view').on('mouseleave',function(){
         allButtons.eq(n % size).trigger('click')
         .addClass('red')
         .siblings('.red').removeClass('red')
-    }, 1000);
+    }, 3000);
 })
 
 
