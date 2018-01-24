@@ -45,9 +45,32 @@ allButtons.eq(n % size).trigger('click')
     .siblings('.red').removeClass('red')
     //siblings接受选择器，前面加.；removeClass接受类名
 
-setInterval(function() {
+var timeId = setInterval(function() {
     n = n + 1;
     allButtons.eq(n % size).trigger('click')
     .addClass('red')
     .siblings('.red').removeClass('red')
 }, 1000);
+
+//关闭闹钟
+$('.view').on('mouseenter',function(){
+    window.clearInterval(timeId)
+})
+
+$('.view').on('mouseleave',function(){
+    timeId = setInterval(function() {
+        n = n + 1;
+        allButtons.eq(n % size).trigger('click')
+        .addClass('red')
+        .siblings('.red').removeClass('red')
+    }, 1000);
+})
+
+
+
+
+
+
+
+
+
