@@ -40,8 +40,14 @@ for (let i = 0; i < allButtons.length; i++) {
 // 自动播放
 var n = 0;
 var size = allButtons.length
-allButtons.eq(n % size).trigger('click');
+allButtons.eq(n % size).trigger('click')
+    .addClass('red')
+    .siblings('.red').removeClass('red')
+    //siblings接受选择器，前面加.；removeClass接受类名
+
 setInterval(function() {
     n = n + 1;
     allButtons.eq(n % size).trigger('click')
+    .addClass('red')
+    .siblings('.red').removeClass('red')
 }, 1000);
